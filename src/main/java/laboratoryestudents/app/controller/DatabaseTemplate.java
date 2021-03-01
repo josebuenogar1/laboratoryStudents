@@ -1,9 +1,5 @@
 package laboratoryestudents.app.controller;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.sql.Date;
 
 
@@ -27,7 +23,6 @@ public class DatabaseTemplate {
 
     public DatabaseTemplate() {}
 
-
     public Date getDate_id() {
         return date_id;
     }
@@ -35,7 +30,6 @@ public class DatabaseTemplate {
     public void setDate_id(Date date_id) {
         this.date_id = date_id;
     }
-
 
     public Boolean getSeven_am() {
         return seven_am;
