@@ -1,12 +1,21 @@
 package laboratoryestudents.app.controller;
 
+
+import laboratoryestudents.app.model.AllenNetwork;
+import laboratoryestudents.app.model.AllenNeumatic;
+import laboratoryestudents.app.model.Siemmens;
+import laboratoryestudents.app.model.StudentRecord;
 import laboratoryestudents.app.service.AllenNetworkService;
 import laboratoryestudents.app.service.AllenNeumaticService;
 import laboratoryestudents.app.service.SiemmensService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -48,6 +57,14 @@ public class App {
         List<Siemmens> listHours = siemmensService.listAll();
         model.addAttribute("listHours",listHours);
         return "siemmens";
+    }
+
+    @RequestMapping(path ="/register/{workStation}/{date_id}/{hour_number}" , method = RequestMethod.GET)
+    public String showForm(Model model,  @PathVariable String workStation, @PathVariable Date date_id, @PathVariable String hour_number ) {
+        StudentRecord studentRecord = new StudentRecord();
+        studentRecord.setStudentRecordId(workStation,date_id,hour_number);
+        model.addAttribute("studentRecord", studentRecord);
+        return "register_form";
     }
 
 

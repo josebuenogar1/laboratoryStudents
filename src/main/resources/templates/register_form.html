@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>Student Record </title>
+</head>
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+<!--<style type="text/css">-->
+
+<!--</style>-->
+<body>
+<div align="center">
+    <h1>Studente Record</h1>
+    <form action="#" th:action="@{/new}" method="post" th:object="${studentRecord}">
+
+        <label >Date:</label>
+        <span th:text="${studentRecord.date_id + '  ' + studentRecord.hour_number + ':00 h'}"></span>
+        <br/>
+
+        <label >Workstation:</label>
+        <span th:text="${studentRecord.workStation}"></span>
+        <br/>
+
+        <label>Name of the person in charge:</label>
+        <input type="text" th:field="*{name}" />
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        <br/>
+
+        <label>Id student:</label>
+        <input type="text" th:field="*{idStudent}" />
+        <span th:if="${#fields.hasErrors('idStudent')}" th:errors="*{idStudent}"></span>
+        <br/>
+
+        <label>E-mail:</label>
+        <input type="text" th:field="*{email}" />
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        <br/>
+
+        <label >Members:</label><br/>
+        <label >Name:</label><input type="text" th:field="*{member1}" /><br/>
+        <label >Name:</label><input type="text" th:field="*{member2}" /><br/>
+        <label >Name:</label><input type="text" th:field="*{member3}" /><br/>
+        <label >Name:</label><input type="text" th:field="*{member4}" /><br/>
+        <label >Name:</label><input type="text" th:field="*{member5}" /><br/>
+        <label >Name:</label><input type="text" th:field="*{member6}" /><br/>
+        <label >Name:</label><input type="text" th:field="*{member7}" /><br/>
+
+        <label>Other material required:</label>
+        <input type="text" th:field="*{material}" />
+        <span th:if="${#fields.hasErrors('material')}" th:errors="*{material}"></span>
+        <br/>
+
+        <button type="submit">Send</button>
+    </form>
+</div>
+</body>
+
+</html>
