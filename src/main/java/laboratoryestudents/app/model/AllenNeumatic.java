@@ -1,13 +1,12 @@
-package laboratoryestudents.app.controller;
+package laboratoryestudents.app.model;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "allen_network")
-public class AllenNetwork extends DatabaseTemplate {
-
-    public AllenNetwork(){}
+@Table(name = "allen_neumatic")
+public class AllenNeumatic extends DatabaseTemplate {
+    public AllenNeumatic(){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -171,4 +170,3 @@ public class AllenNetwork extends DatabaseTemplate {
         super.setNine_pm(nine_pm);
     }
 }
-

@@ -1,4 +1,4 @@
-package laboratoryestudents.app.controller;
+package laboratoryestudents.app.model;
 
 import javax.persistence.*;
 import java.sql.Date;

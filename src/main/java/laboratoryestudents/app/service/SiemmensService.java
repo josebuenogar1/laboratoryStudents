@@ -1,7 +1,6 @@
 package laboratoryestudents.app.service;
 
-import laboratoryestudents.app.controller.AllenNeumatic;
-import laboratoryestudents.app.controller.Siemmens;
+import laboratoryestudents.app.model.Siemmens;
 import laboratoryestudents.app.repository.SiemmensRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
