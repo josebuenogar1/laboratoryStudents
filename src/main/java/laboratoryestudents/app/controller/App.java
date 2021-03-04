@@ -8,9 +8,11 @@ import laboratoryestudents.app.model.StudentRecord;
 import laboratoryestudents.app.service.AllenNetworkService;
 import laboratoryestudents.app.service.AllenNeumaticService;
 import laboratoryestudents.app.service.SiemmensService;
+import laboratoryestudents.app.service.StudentRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +30,9 @@ public class App {
 
     @Autowired
     private SiemmensService siemmensService;
+
+    @Autowired
+    private StudentRecordService studentRecordService;
 
     @RequestMapping(value="/")
     public String index(){
@@ -65,6 +70,15 @@ public class App {
         studentRecord.setStudentRecordId(workStation,date_id,hour_number);
         model.addAttribute("studentRecord", studentRecord);
         return "register_form";
+    }
+
+
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public String saveProduct(@ModelAttribute("studentRecord") StudentRecord studentRecord) {
+        System.out.println(studentRecord.getStudentRecordId());
+        studentRecordService.saveStudentRecord(studentRecord);
+
+        return "redirect:/";
     }
 
 

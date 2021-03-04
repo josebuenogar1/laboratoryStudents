@@ -4,20 +4,28 @@
     <title>Student Record </title>
 </head>
 <link rel="stylesheet" th:href="@{/css/styles.css}">
-<!--<style type="text/css">-->
-
-<!--</style>-->
 <body>
 <div align="center">
     <h1>Studente Record</h1>
     <form action="#" th:action="@{/new}" method="post" th:object="${studentRecord}">
+<!--    <label >studentRecordId</label>-->
+        <input type="hidden" th:field="*{studentRecordId}" value="${studentRecordId}}" readonly />
+        <span th:if="${#fields.hasErrors('studentRecordId')}" th:errors="*{studentRecordId}"></span>
+        <br/>
 
         <label >Date:</label>
-        <span th:text="${studentRecord.date_id + '  ' + studentRecord.hour_number + ':00 h'}"></span>
+        <input type="text" th:field="*{date_id}" value="${date_id}}" readonly />
+        <span th:if="${#fields.hasErrors('date_id')}" th:errors="*{date_id}"></span>
+        <br/>
+
+        <label >Hour:</label>
+        <input type="text" th:field="*{hour_number}" value="${hour_number}" readonly />
+        <span th:if="${#fields.hasErrors('hour_number')}" th:errors="*{hour_number}"></span>
         <br/>
 
         <label >Workstation:</label>
-        <span th:text="${studentRecord.workStation}"></span>
+        <input type="text" th:field="*{workStation}" value="${workStation}}" readonly />
+        <span th:if="${#fields.hasErrors('workStation')}" th:errors="*{workStation}"></span>
         <br/>
 
         <label>Name of the person in charge:</label>
@@ -53,5 +61,4 @@
     </form>
 </div>
 </body>
-
 </html>
