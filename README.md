@@ -69,6 +69,27 @@ eight_pm  BOOLEAN NOT NULL DEFAULT TRUE,
 nine_pm   BOOLEAN NOT NULL DEFAULT TRUE,
 CONSTRAINT siemmens_pkey  PRIMARY KEY (date_id)
 );
+
+CREATE TABLE public.appointments
+(
+    student_record_id character varying(20) NOT NULL,
+    work_station character varying(20) NOT NULL,
+    date_id date NOT NULL,
+    hour_number character varying(2) NOT NULL,
+    name character varying(30) NOT NULL,
+    id_student character varying(20) NOT NULL,
+    email character varying(30) NOT NULL,
+    member1 character varying(30),
+    member2 character varying(30),
+    member3 character varying(30),
+    member4 character varying(30),
+    member5 character varying(30),
+    member6 character varying(30),
+    member7 character varying(30),
+	material character varying(50),
+    creation_time timestamp with time zone NOT NULL,
+    PRIMARY KEY (student_record_id)
+);
 ```
 
 ### insert values
