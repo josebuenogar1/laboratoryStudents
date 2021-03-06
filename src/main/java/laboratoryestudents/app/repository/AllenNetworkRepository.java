@@ -8,6 +8,7 @@ import java.sql.Date;
 
 public interface AllenNetworkRepository extends JpaRepository<AllenNetwork,Date>  {
 
+
 }
 
 
