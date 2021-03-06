@@ -3,7 +3,6 @@ package laboratoryestudents.app.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.sql.Date;
 import java.time.LocalDateTime;
@@ -25,6 +24,7 @@ public class StudentRecord {
     private Date date_id;
     private String hour_number;
 
+
     @NotEmpty(message="Please enter your name")
     private String name;
 
@@ -35,8 +35,8 @@ public class StudentRecord {
     @Column(name = "id_student")
     private String idStudent;
 
-    @NotBlank
-    @Email(message = "Please enter a valid e-mail address")
+    @NotEmpty(message=" Empty please enter your e-mail address")
+    @Email(message="Please enter a valid e-mail address")
     private String email;
 
     /**
