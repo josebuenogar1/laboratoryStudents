@@ -22,8 +22,13 @@
         </tbody>
     </table>
 </div>
-
-
+<!--this reload the page if register_form was send-->
+<script>
+     if (sessionStorage.getItem("Page2Visited")) {
+          sessionStorage.removeItem("Page2Visited");
+          window.location.reload(true); // force refresh page1
+     }
+</script>
 <script th:inline="javascript">
     var hours= [[${listHours}]];
 </script>

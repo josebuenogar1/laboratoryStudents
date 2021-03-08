@@ -76,12 +76,12 @@ public class App {
 
         if (bindingResult.hasErrors()) {
             return "register_form";
+        } else {
+            studentRecordService.saveStudentRecord(studentRecord);
+            updateHoursTable(studentRecord);
+
+            return "register_success";
         }
-
-        studentRecordService.saveStudentRecord(studentRecord);
-        updateHoursTable(studentRecord);
-
-        return "redirect:/";
     }
 
     public void updateHoursTable(StudentRecord obj) {
@@ -120,6 +120,7 @@ public class App {
         AllenNeumatic table = tableResponse.get();
         mapTableHour(table, hour);
         allenNeumaticService.save(table);
+
     }
 
     private void updateHoursSiemmens(Date date, String hour) {

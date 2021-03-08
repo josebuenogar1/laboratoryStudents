@@ -51,8 +51,12 @@ public class StudentRecord {
     private String member7;
     private String material;
 
-    @Column(name = "creation_time")
+    //@Column(name = "creation_time")
     private LocalDateTime creation_time = LocalDateTime.now();
+
+    /**
+     * Don't forget getters and setter.
+     */
 
 
     public String getMember1() {
@@ -152,13 +156,6 @@ public class StudentRecord {
         this.material = material;
     }
 
-    public LocalDateTime getcreation_time() {
-        return creation_time;
-    }
-
-    public void setcreation_time(LocalDateTime creation_time) {
-        this.creation_time = creation_time;
-    }
 
     public String getStudentRecordId() {
         return studentRecordId;
@@ -191,6 +188,13 @@ public class StudentRecord {
         this.hour_number = hour_number;
     }
 
+    public LocalDateTime getCreation_time() {
+        return creation_time;
+    }
+
+    public void setCreation_time(LocalDateTime creation_time) {
+        this.creation_time = creation_time;
+    }
 
     @Override
     public String toString() {
