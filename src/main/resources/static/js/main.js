@@ -20,7 +20,7 @@
   const SATURDAY = 5
     var day = new Date(e.date_id);
     var i = day.getDay()
-    if (n<SATURDAY){
+    if (i<SATURDAY){
     hours_ordered[i]=e
     }
     })
