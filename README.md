@@ -1,4 +1,22 @@
-# Api rest app for record of laboratory students
+# Api rest app for lab student record
+This is a web app used to register lab students.
+
+![home](/images/home.png)
+
+It allows see availability.
+![hours](/images/hours.png)
+
+It checks all fields needed.
+![student_record](/images/student_record.png)
+
+![student_record_2](/images/student_record_2.png)
+
+You can export you register to PDF.
+
+![register_complete](/images/register_complete.png)
+
+![exportPDF](/images/exportPDF.png)
+
 
 ## DataBase
 
