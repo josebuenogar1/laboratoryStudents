@@ -4,24 +4,18 @@ This is a web app used to register lab students. <br/>
 ![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/home.PNG) <br/>
 
 ---
-
 It allows see availability. <br/>
-<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/hours.PNG" width="250" height="250"/> <br/>
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/hours.PNG" width="500" height="500"/> <br/>
 ---
 It checks all fields needed. <br/>
-![student_record](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record.PNG) <br/>
-
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record.PNG" width="500" height="500"/> <br/>
 ---
-![student_record_2](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record_2.PNG) <br/>
-
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record_2.PNG" width="500" height="500"/> <br/>
 ---
 
 You can export you register to PDF. <br/>
-
-![register_complete](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/register_complete.PNG) <br/>
-
-![exportPDF](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.PNG) <br/>
-
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/register_complete.PNG" width="500" height="500"/> <br/>
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.PNG" width="500" height="500"/> <br/>
 ---
 ## DataBase
 
