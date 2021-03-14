@@ -1,6 +1,6 @@
 package laboratoryestudents.app.controller;
 
-
+import com.lowagie.text.DocumentException;
 import laboratoryestudents.app.model.*;
 import laboratoryestudents.app.service.AllenNetworkService;
 import laboratoryestudents.app.service.AllenNeumaticService;
@@ -11,8 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
@@ -68,6 +69,18 @@ public class App {
         studentRecord.setStudentRecordId(workStation, date_id, hour_number);
         model.addAttribute("studentRecord", studentRecord);
         return "register_form";
+    }
+
+    @RequestMapping(path ="/export/pdf/{studentRecordId}" , method = RequestMethod.GET)
+    public void exportToPDF(HttpServletResponse response, @PathVariable String studentRecordId) throws DocumentException, IOException {
+        response.setContentType("application/pdf");
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=users_.pdf";
+        response.setHeader(headerKey, headerValue);
+        StudentRecord studentRecord = studentRecordService.get(studentRecordId);
+        StudentRecordPdf studentRecordPdf = new StudentRecordPdf(studentRecord);
+        studentRecordPdf.export(response);
+
     }
 
 

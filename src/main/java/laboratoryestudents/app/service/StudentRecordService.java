@@ -18,4 +18,8 @@ public class StudentRecordService {
         studentRecordRepository.save(studentRecord);
 
     }
+
+    public StudentRecord get(String id) {
+        return studentRecordRepository.findById(id).get();
+    }
 }
