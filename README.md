@@ -1,21 +1,21 @@
 # Api rest app for lab student record
 This is a web app used to register lab students.
 
-![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/home.png?raw=true)
+![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/home.PNG)
 
 It allows see availability.
-![hours](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/hours.png)
+![hours](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/hours.PNG)
 
 It checks all fields needed.
-![student_record](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record.png)
+![student_record](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record.PNG)
 
-![student_record_2](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record_2.png)
+![student_record_2](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record_2.PNG)
 
 You can export you register to PDF.
 
-![register_complete](https://github.com/josebuenogar1/laboratoryStudents/blob/mainimages/register_complete.png)
+![register_complete](https://github.com/josebuenogar1/laboratoryStudents/blob/mainimages/register_complete.PNG)
 
-![exportPDF](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.png)
+![exportPDF](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.PNG)
 
 
 ## DataBase
