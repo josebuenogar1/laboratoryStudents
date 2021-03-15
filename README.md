@@ -25,7 +25,7 @@ PDF generated. <br/>
 3. [Create DB](#DataBase)
 4. Add info about your DB conection. <br/>
    ![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/aplication_properties.PNG) <br/>
-5. Run AppApplitacion.
+5. Run [AppApplication](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/java/laboratoryestudents/app/AppApplication.java).
 6. Open localhost:8080.
 
 ## DataBase
