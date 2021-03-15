@@ -17,6 +17,15 @@ You can export you register to PDF. <br/>
 <img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/register_complete.PNG" width="500" height="500"/> <br/>
 <img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.PNG" width="500" height="500"/> <br/>
 ---
+## Getting Started
+
+1. Download or clone the code.
+2. Open  pom.xml file as a project (intelilliJ).
+3. Add info about your DB conection. <br/>
+   <img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/aplication_properties.PNG" width="500" height="500"/> <br/>
+4. [Create DB](#DB)
+
+#DB
 ## DataBase
 
 ### Create database pgAdmin
