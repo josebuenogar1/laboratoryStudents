@@ -24,7 +24,7 @@ PDF generated. <br/>
 2. Open  pom.xml file as a project (intelilliJ).
 3. [Create DB](#DataBase)
 4. Add info about your DB conection. <br/>
-   ![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/aplication_properties_aws.PNG) <br/>
+   ![home](https://github.com/josebuenogar1/laboratoryStudents/blob/aws_rds/images/aplication_properties_aws.PNG) <br/>
 5. Run [AppApplication](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/java/laboratoryestudents/app/AppApplication.java).
 6. Open localhost:8080.
 
