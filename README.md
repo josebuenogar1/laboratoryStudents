@@ -29,8 +29,10 @@ You can export you register to PDF. <br/>
 
 ## DataBase
 
-### Create database pgAdmin
+### Create database pgAdmin 
+Create a new data base called **laboratory.**
 https://www.pgadmin.org/docs/pgadmin4/4.27/database_dialog.html
+
 ### create tables
 ```sql
 CREATE TABLE allen_network
@@ -99,7 +101,7 @@ CONSTRAINT siemmens_pkey  PRIMARY KEY (date_id)
 
 CREATE TABLE public.appointments
 (
-    student_record_id character varying(20) NOT NULL,
+    student_record_id character varying(50) NOT NULL,
     work_station character varying(20) NOT NULL,
     date_id date NOT NULL,
     hour_number character varying(2) NOT NULL,
