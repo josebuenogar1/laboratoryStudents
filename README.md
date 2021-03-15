@@ -21,11 +21,12 @@ You can export you register to PDF. <br/>
 
 1. Download or clone the code.
 2. Open  pom.xml file as a project (intelilliJ).
-3. Add info about your DB conection. <br/>
+3. [Create DB](#DataBase)
+4. Add info about your DB conection. <br/>
    ![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/aplication_properties.PNG) <br/>
-4. [Create DB](#DB)
+5. Run AppApplitacion.
+6. Open localhost:8080.
 
-#DB
 ## DataBase
 
 ### Create database pgAdmin
