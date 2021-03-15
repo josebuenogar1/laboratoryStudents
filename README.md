@@ -15,6 +15,7 @@ It checks all fields needed. <br/>
 
 You can export you register to PDF. <br/>
 <img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/register_complete.PNG" width="500" height="500"/> <br/>
+PDF generated. <br/>
 <img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.PNG" width="500" height="500"/> <br/>
 ---
 ## Getting Started
@@ -30,7 +31,7 @@ You can export you register to PDF. <br/>
 ## DataBase
 
 ### Create database pgAdmin 
-Create a new data base called **laboratory.**
+Create a new data base called **laboratory.** <br/>
 https://www.pgadmin.org/docs/pgadmin4/4.27/database_dialog.html
 
 ### create tables
