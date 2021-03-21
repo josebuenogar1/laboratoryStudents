@@ -14,7 +14,7 @@ It checks all fields needed. <br/>
 ---
 
 You can export your register to PDF. <br/><br/>
-<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/register_complete.PNG" width="500" height="500"/> <br/><br/>
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/register_complete.PNG" /> <br/><br/>
 PDF generated. <br/><br/>
 <img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.PNG" width="500" height="500"/> <br/><br/>
 ---
@@ -24,7 +24,7 @@ PDF generated. <br/><br/>
 2. Open  pom.xml file as a project (intelilliJ).
 3. [Create DB](#DataBase)
 4. Add info about your DB conection. <br/>
-   ![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/aplication_properties.PNG) <br/>
+   [file](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/resources/application.properties) <br/>
 5. Run [AppApplication](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/java/laboratoryestudents/app/AppApplication.java).
 6. Open localhost:8080.
 
