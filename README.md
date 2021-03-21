@@ -34,7 +34,12 @@ PDF generated. <br/><br/>
 5. Run [AppApplication](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/java/laboratoryestudents/app/AppApplication.java).
 6. Open localhost:8080.
 
+Note: if you can deploy in aws go to aws_rds branch. 
+
 ## Running the tests
+
+1. create your class under [folder](https://github.com/josebuenogar1/laboratoryStudents/tree/main/src/test/java/com/RecordlaboratoryEstudents/app)
+2. add your class on [testng.xml](https://github.com/josebuenogar1/laboratoryStudents/blob/main/testng.xml)
 
 
 ## DataBase
