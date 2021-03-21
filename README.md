@@ -21,8 +21,8 @@ PDF generated. <br/><br/>
 ## Getting Started
 
 ### Prerequisites
-1.Intelillij
-2.Postgres SQL
+1. Intelillij
+2. Postgres SQL
 
 
 ### Installing
@@ -38,9 +38,9 @@ Note: if you can deploy in aws go to aws_rds branch.
 
 ## Running the tests
 
-1. create your class under [folder](https://github.com/josebuenogar1/laboratoryStudents/tree/main/src/test/java/com/RecordlaboratoryEstudents/app)
-2. add your class on [testng.xml](https://github.com/josebuenogar1/laboratoryStudents/blob/main/testng.xml)
-
+1. Create your class under [folder](https://github.com/josebuenogar1/laboratoryStudents/tree/main/src/test/java/com/RecordlaboratoryEstudents/app).
+2. Add your class on [testng.xml](https://github.com/josebuenogar1/laboratoryStudents/blob/main/testng.xml).
+3. Run testng.xml.
 
 ## DataBase
 
@@ -48,7 +48,7 @@ Note: if you can deploy in aws go to aws_rds branch.
 Create a new data base called **laboratory.** <br/><br/>
 https://www.pgadmin.org/docs/pgadmin4/4.27/database_dialog.html
 
-### create tables
+### Create tables
 ```sql
 CREATE TABLE allen_network
 (
@@ -136,7 +136,7 @@ CREATE TABLE public.appointments
 );
 ```
 
-### insert values
+### Insert values
 ```sql
 INSERT INTO allen_network(date_id) 
 VALUES ('2021-03-01'),
