@@ -20,6 +20,12 @@ PDF generated. <br/><br/>
 ---
 ## Getting Started
 
+### Prerequisites
+1.Intelillij
+2.Postgres SQL
+
+
+### Installing
 1. Download or clone the code.
 2. Open  pom.xml file as a project (intelilliJ).
 3. [Create DB](#DataBase)
@@ -27,6 +33,9 @@ PDF generated. <br/><br/>
    [file](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/resources/application.properties) <br/>
 5. Run [AppApplication](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/java/laboratoryestudents/app/AppApplication.java).
 6. Open localhost:8080.
+
+## Running the tests
+
 
 ## DataBase
 
