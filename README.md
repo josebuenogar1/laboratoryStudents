@@ -1,22 +1,22 @@
 # Api rest app for lab student record
-This is a web app used to register lab students. <br/>
+This is a web app used to register lab students. <br/><br/>
  
-![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/home.PNG) <br/>
+![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/home.PNG) <br/><br/>
 
 ---
-It allows see availability. <br/>
-<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/hours.PNG" width="500" height="500"/> <br/>
+It shows availability. <br/>
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/hours.PNG" width="500" height="500"/> <br/><br/>
 ---
 It checks all fields needed. <br/>
-<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record.PNG" width="500" height="500"/> <br/>
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record.PNG" width="500" height="500"/> <br/><br/>
 ---
-<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record_2.PNG" width="500" height="500"/> <br/>
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/student_record_2.PNG" width="500" height="500"/> <br/><br/>
 ---
 
-You can export you register to PDF. <br/>
-<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/register_complete.PNG" width="500" height="500"/> <br/>
-PDF generated. <br/>
-<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.PNG" width="500" height="500"/> <br/>
+You can export your register to PDF. <br/><br/>
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/register_complete.PNG" width="500" height="500"/> <br/><br/>
+PDF generated. <br/><br/>
+<img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/exportPDF.PNG" width="500" height="500"/> <br/><br/>
 ---
 ## Getting Started
 
@@ -31,7 +31,7 @@ PDF generated. <br/>
 ## DataBase
 
 ### Create database pgAdmin 
-Create a new data base called **laboratory.** <br/>
+Create a new data base called **laboratory.** <br/><br/>
 https://www.pgadmin.org/docs/pgadmin4/4.27/database_dialog.html
 
 ### create tables

@@ -30,7 +30,7 @@ public class StudentRecordPdf {
         p1.setAlignment(Element.ALIGN_CENTER);
 
         Paragraph p2 = new Paragraph(new Phrase(
-                "yo " + name.toUpperCase() + " me estudiante de la universidad con matrícula "+ idStudent.toUpperCase() +
+                "yo " + name.toUpperCase() + " estudiante de la universidad con matrícula "+ idStudent.toUpperCase() +
                 " hago constar que estaré trabajando en la estacion de trabajo " + workStation.toUpperCase() +" del laboratorio, junto con mi equipo conformado por:"
                 , FontFactory.getFont(
                 FontFactory.HELVETICA, 12)));
