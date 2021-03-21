@@ -2,8 +2,15 @@
 This is a branch to deploy your app with aws beanstalk. 
 
 ---
+
 ## Getting Started
 
+# Prerequisites
+1.Intelillij
+2.Postgres SQL
+3. AWS acount
+   
+# Installing
 1. Download or clone the code.
 2. Open  pom.xml file as a project (intelilliJ).
 3. Create aws beanstalk enviroment [link](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-getstarted.html) 
@@ -14,3 +21,6 @@ This is a branch to deploy your app with aws beanstalk.
    [file](https://github.com/josebuenogar1/laboratoryStudents/blob/aws_rds/src/main/resources/application.properties) 
 8. Generate the .jar file and upload to aws beanstalk.
 9. Open the link to the project.
+
+## Running the tests
+
