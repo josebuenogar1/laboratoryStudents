@@ -6,8 +6,8 @@ This is a branch to deploy your app with aws beanstalk.
 ## Getting Started
 
 # Prerequisites
-1.Intelillij
-2.Postgres SQL
+1. Intelillij
+2. Postgres SQL
 3. AWS acount
    
 # Installing
@@ -22,5 +22,4 @@ This is a branch to deploy your app with aws beanstalk.
 8. Generate the .jar file and upload to aws beanstalk.
 9. Open the link to the project.
 
-## Running the tests
 
