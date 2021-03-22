@@ -15,10 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 
 @Controller
@@ -178,65 +175,54 @@ public class App {
 
 
     private void mapTableHour(DatabaseTemplate table, String hour) {
-        if (hour.equals("7")) {
-            table.setSeven_am(false);
-            return;
-        }
-        if (hour.equals("8")) {
-            table.setEight_am(false);
-            return;
-        }
-        if (hour.equals("9")) {
-            table.setNine_am(false);
-            return;
-        }
-        if (hour.equals("10")) {
-            table.setTen_am(false);
-            return;
-        }
-        if (hour.equals("11")) {
-            table.setEleven_am(false);
-            return;
-        }
-        if (hour.equals("12")) {
-            table.setTwelve_am(false);
-            return;
-        }
-        if (hour.equals("13")) {
-            table.setOne_pm(false);
-            return;
-        }
-        if (hour.equals("14")) {
-            table.setTwo_pm(false);
-            return;
-        }
-        if (hour.equals("15")) {
-            table.setThree_pm(false);
-            return;
-        }
-        if (hour.equals("16")) {
-            table.setFour_pm(false);
-            return;
-        }
-        if (hour.equals("17")) {
-            table.setFive_pm(false);
-            return;
-        }
-        if (hour.equals("18")) {
-            table.setEight_pm(false);
-            return;
-        }
-        if (hour.equals("19")) {
-            table.setSeven_pm(false);
-            return;
-        }
-        if (hour.equals("20")) {
-            table.setEight_pm(false);
-            return;
-        }
-        if (hour.equals("21")) {
-            table.setNine_pm(false);
-            return;
+
+        switch(hour){
+            case "7":
+                table.setSeven_am(false);
+                break;
+            case "8":
+                table.setEight_am(false);
+                break;
+            case "9":
+                table.setNine_am(false);
+                break;
+            case "10":
+                table.setTen_am(false);
+                break;
+            case "11":
+                table.setEleven_am(false);
+                break;
+            case "12":
+                table.setTwelve_am(false);
+                break;
+            case "13":
+                table.setOne_pm(false);
+                break;
+            case "14":
+                table.setTwo_pm(false);
+                break;
+            case "15":
+                table.setThree_pm(false);
+                break;
+            case "16":
+                table.setFour_pm(false);
+                break;
+            case "17":
+                table.setFive_pm(false);
+                break;
+            case "18":
+                table.setEight_pm(false);
+                break;
+            case "19":
+                table.setSeven_pm(false);
+                break;
+            case "20":
+                table.setEight_pm(false);
+                break;
+            case "21":
+                table.setNine_pm(false);
+                break;
+            default:System.out.println("Invalid hour!");
         }
 
     }
