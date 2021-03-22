@@ -138,24 +138,67 @@ CREATE TABLE public.appointments
 
 ### Insert values
 ```sql
-INSERT INTO allen_network(date_id) 
-VALUES ('2021-03-01'),
-       ('2021-03-02'),
-       ('2021-03-03'),
-       ('2021-03-04'),
-       ('2021-03-05');
+create or replace function set_allen_network_table(len_from date, len_to int)
+returns void
+language plpgsql
+as
+$$
+declare
+   tempo date;
+   counter integer := 0;
+begin
+tempo :=len_from;
+while counter < len_to loop
+      INSERT INTO public.allen_network(date_id) VALUES (tempo);
+	  counter := counter + 1;
+	  tempo := tempo + INTERVAL '1 day';
+   end loop;
+end;
+$$;
 
-INSERT INTO allen_neumatic(date_id)
-VALUES ('2021-03-01'),
-       ('2021-03-02'),
-       ('2021-03-03'),
-       ('2021-03-04'),
-       ('2021-03-05');
+SELECT  set_allen_network_table('2021-03-21',30);
 
-INSERT INTO siemmens(date_id) 
-VALUES ('2021-03-01'),
-       ('2021-03-02'),
-       ('2021-03-03'),
-       ('2021-03-04'),
-       ('2021-03-05');
+
+create or replace function set_allen_neumatic_table(len_from date, len_to int)
+returns void
+language plpgsql
+as
+$$
+declare
+   tempo date;
+   counter integer := 0;
+begin
+tempo :=len_from;
+while counter < len_to loop
+      INSERT INTO public.allen_neumatic(date_id) VALUES (tempo);
+	  counter := counter + 1;
+	  tempo := tempo + INTERVAL '1 day';
+   end loop;
+end;
+$$;
+
+SELECT  set_allen_neumatic_table('2021-03-21',30);
+
+
+create or replace function set_siemmens_table(len_from date, len_to int)
+returns void
+language plpgsql
+as
+$$
+declare
+   tempo date;
+   counter integer := 0;
+begin
+tempo :=len_from;
+while counter < len_to loop
+      INSERT INTO public.siemmens(date_id) VALUES (tempo);
+	  counter := counter + 1;
+	  tempo := tempo + INTERVAL '1 day';
+   end loop;
+end;
+$$;
+
+SELECT  set_siemmens_table('2021-03-21',30);
+
+
 ```
