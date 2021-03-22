@@ -34,6 +34,7 @@ public class TestAllenNetwork {
         WebElement table = driver.findElement(By.xpath ("//*[@id='hours_table']/thead/tr[3]/td[1]/a"));
         table.click();
         this.sleep(3000);
+
     }
 
     @Test(priority = 2)
@@ -53,11 +54,24 @@ public class TestAllenNetwork {
     public void allenNetworkPDF(){
         WebElement  pdf = driver.findElement(By.xpath("/html/body/div[1]/a[1]"));
         pdf.click();
-        this.sleep(10000);
+        this.sleep(5000);
         final File file = new File("C:/Users/jose/Downloads/users_.pdf");
         Assert.assertTrue(file.exists());
     }
 
+    @Test(priority = 4)
+    public void allenHome(){
+         WebElement home = driver.findElement(By.linkText("Home"));
+         home.click();
+         this.sleep(3000);
+    }
+
+    @Test(priority = 5)
+    public void allenUnavailable(){
+        allenNetworkLink();
+        WebElement una = driver.findElement(By.xpath("//*[@id=\"hours_table\"]/thead/tr[3]/td[1]"));
+        Assert.assertEquals(una.getText(),"Unavailable");
+    }
 
 
     @AfterClass
