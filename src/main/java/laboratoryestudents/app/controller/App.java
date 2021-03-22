@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,15 +44,36 @@ public class App {
     @RequestMapping(value = "/allenNetwork")
     public String allenNetwork(Model model) {
 
-        List<AllenNetwork> listHours = allenNetworkService.listAll();
+        List<AllenNetwork> listHours= new ArrayList<>();
+        List<Date> dates =new ArrayList<>();
+        Optional<AllenNetwork> hours = Optional.empty();
+
+        dates=datesGenerator(dates);
+
+        for (Date date :  dates) {
+            hours = allenNetworkService.findById(date);
+            listHours.add(hours.get());
+        }
+
         model.addAttribute("listHours", listHours);
         return "allenNetwork";
     }
+
 
     @RequestMapping(value = "/allenNeumatic")
     public String allenNeumatic(Model model) {
 
         List<AllenNeumatic> listHours = allenNeumaticService.listAll();
+        List<Date> dates =new ArrayList<>();
+        Optional<AllenNeumatic> hours = Optional.empty();
+
+        dates=datesGenerator(dates);
+
+        for (Date date :  dates) {
+            hours = allenNeumaticService.findById(date);
+            listHours.add(hours.get());
+        }
+
         model.addAttribute("listHours", listHours);
         return "allenNeumatic";
     }
@@ -59,6 +82,16 @@ public class App {
     public String siemmens(Model model) {
 
         List<Siemmens> listHours = siemmensService.listAll();
+        List<Date> dates =new ArrayList<>();
+        Optional<Siemmens> hours = Optional.empty();
+
+        dates=datesGenerator(dates);
+
+        for (Date date :  dates) {
+            hours = siemmensService.findById(date);
+            listHours.add(hours.get());
+        }
+
         model.addAttribute("listHours", listHours);
         return "siemmens";
     }
@@ -206,6 +239,31 @@ public class App {
             return;
         }
 
+    }
+
+    public  List<Date> datesGenerator(List<Date> dates){
+        Integer  TOTAL_DAYS_WEEK =7;
+        int currentDay;
+
+        Calendar cal = Calendar.getInstance();
+        currentDay = cal.get(Calendar.DAY_OF_WEEK);
+
+        //check if is not saturday(7)
+        if (currentDay != 7) {
+            //backward number of days to start on Saturday
+            cal.add(Calendar.DATE, -currentDay);
+        }
+
+        Date sqlDate = new Date(cal.getTimeInMillis());
+        dates.add(sqlDate);
+
+        for (int i =1 ; i< TOTAL_DAYS_WEEK ; i++) {
+            cal.setTime(sqlDate);
+            cal.add(Calendar.DATE, 1);
+            sqlDate = new Date(cal.getTimeInMillis());
+            dates.add(sqlDate);
+        }
+        return dates;
     }
 
 }
