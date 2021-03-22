@@ -156,7 +156,8 @@ while counter < len_to loop
 end;
 $$;
 
-SELECT  set_allen_network_table('2021-03-21',30);
+--params: start date, days from start date
+SELECT  set_allen_network_table('2021-03-20',30);
 
 
 create or replace function set_allen_neumatic_table(len_from date, len_to int)
@@ -177,7 +178,8 @@ while counter < len_to loop
 end;
 $$;
 
-SELECT  set_allen_neumatic_table('2021-03-21',30);
+--params: start date, days from start date
+SELECT  set_allen_neumatic_table('2021-03-20',30);
 
 
 create or replace function set_siemmens_table(len_from date, len_to int)
@@ -198,7 +200,8 @@ while counter < len_to loop
 end;
 $$;
 
-SELECT  set_siemmens_table('2021-03-21',30);
+--params: start date, days from start date
+SELECT  set_siemmens_table('2021-03-20',30);
 
 
 ```
