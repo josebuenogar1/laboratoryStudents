@@ -49,7 +49,12 @@ public class App {
 
         for (Date date :  dates) {
             hours = allenNetworkService.findById(date);
-            listHours.add(hours.get());
+            try {
+                listHours.add(hours.get());
+            }catch (Exception e){
+                System.out.println("Does not exist date on DB" );
+                break;
+            }
         }
 
         model.addAttribute("listHours", listHours);
@@ -59,17 +64,21 @@ public class App {
 
     @RequestMapping(value = "/allenNeumatic")
     public String allenNeumatic(Model model) {
-
-        List<AllenNeumatic> listHours = allenNeumaticService.listAll();
+        List<AllenNeumatic> listHours = new ArrayList<>();
         List<Date> dates =new ArrayList<>();
         Optional<AllenNeumatic> hours = Optional.empty();
-
         dates=datesGenerator(dates);
 
         for (Date date :  dates) {
             hours = allenNeumaticService.findById(date);
-            listHours.add(hours.get());
+            try {
+                listHours.add(hours.get());
+            }catch (Exception e){
+                System.out.println("Does not exist date on DB" );
+                break;
+            }
         }
+
 
         model.addAttribute("listHours", listHours);
         return "allenNeumatic";
@@ -78,7 +87,7 @@ public class App {
     @RequestMapping(value = "/siemmens")
     public String siemmens(Model model) {
 
-        List<Siemmens> listHours = siemmensService.listAll();
+        List<Siemmens> listHours = new ArrayList<>();
         List<Date> dates =new ArrayList<>();
         Optional<Siemmens> hours = Optional.empty();
 
@@ -86,7 +95,12 @@ public class App {
 
         for (Date date :  dates) {
             hours = siemmensService.findById(date);
+            try {
             listHours.add(hours.get());
+            }catch (Exception e){
+                System.out.println("Does not exist date on DB" );
+                break;
+            }
         }
 
         model.addAttribute("listHours", listHours);
@@ -229,13 +243,14 @@ public class App {
 
     public  List<Date> datesGenerator(List<Date> dates){
         Integer  TOTAL_DAYS_WEEK =7;
+        int SATURDAY = 7;
         int currentDay;
 
         Calendar cal = Calendar.getInstance();
         currentDay = cal.get(Calendar.DAY_OF_WEEK);
 
         //check if is not saturday(7)
-        if (currentDay != 7) {
+        if (currentDay != SATURDAY) {
             //backward number of days to start on Saturday
             cal.add(Calendar.DATE, -currentDay);
         }
