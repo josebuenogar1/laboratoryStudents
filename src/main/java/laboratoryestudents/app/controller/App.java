@@ -6,6 +6,7 @@ import laboratoryestudents.app.service.AllenNetworkService;
 import laboratoryestudents.app.service.AllenNeumaticService;
 import laboratoryestudents.app.service.SiemmensService;
 import laboratoryestudents.app.service.StudentRecordService;
+import laboratoryestudents.app.util.DatesGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.*;
+
 
 
 @Controller
@@ -45,7 +47,7 @@ public class App {
         List<Date> dates =new ArrayList<>();
         Optional<AllenNetwork> hours = Optional.empty();
 
-        dates=datesGenerator(dates);
+        dates= DatesGenerator.generate(dates);
 
         for (Date date :  dates) {
             hours = allenNetworkService.findById(date);
@@ -67,7 +69,7 @@ public class App {
         List<AllenNeumatic> listHours = new ArrayList<>();
         List<Date> dates =new ArrayList<>();
         Optional<AllenNeumatic> hours = Optional.empty();
-        dates=datesGenerator(dates);
+        dates=DatesGenerator.generate(dates);
 
         for (Date date :  dates) {
             hours = allenNeumaticService.findById(date);
@@ -91,7 +93,7 @@ public class App {
         List<Date> dates =new ArrayList<>();
         Optional<Siemmens> hours = Optional.empty();
 
-        dates=datesGenerator(dates);
+        dates=DatesGenerator.generate(dates);
 
         for (Date date :  dates) {
             hours = siemmensService.findById(date);
@@ -241,30 +243,6 @@ public class App {
 
     }
 
-    public  List<Date> datesGenerator(List<Date> dates){
-        Integer  TOTAL_DAYS_WEEK =7;
-        int SATURDAY = 7;
-        int currentDay;
 
-        Calendar cal = Calendar.getInstance();
-        currentDay = cal.get(Calendar.DAY_OF_WEEK);
-
-        //check if is not saturday(7)
-        if (currentDay != SATURDAY) {
-            //backward number of days to start on Saturday
-            cal.add(Calendar.DATE, -currentDay);
-        }
-
-        Date sqlDate = new Date(cal.getTimeInMillis());
-        dates.add(sqlDate);
-
-        for (int i =1 ; i< TOTAL_DAYS_WEEK ; i++) {
-            cal.setTime(sqlDate);
-            cal.add(Calendar.DATE, 1);
-            sqlDate = new Date(cal.getTimeInMillis());
-            dates.add(sqlDate);
-        }
-        return dates;
-    }
 
 }
