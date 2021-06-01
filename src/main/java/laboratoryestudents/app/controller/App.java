@@ -7,6 +7,7 @@ import laboratoryestudents.app.service.AllenNeumaticService;
 import laboratoryestudents.app.service.SiemmensService;
 import laboratoryestudents.app.service.StudentRecordService;
 import laboratoryestudents.app.util.DatesGenerator;
+import laboratoryestudents.app.util.MapTableHour;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,6 +35,12 @@ public class App {
     @Autowired
     private StudentRecordService studentRecordService;
 
+    @Autowired
+    private MapTableHour mapTableHour;
+
+    @Autowired
+    private DatesGenerator datesGenerator;
+
     @RequestMapping(value = "/")
     public String index() {
 
@@ -47,7 +54,7 @@ public class App {
         List<Date> dates =new ArrayList<>();
         Optional<AllenNetwork> hours = Optional.empty();
 
-        dates= DatesGenerator.generate(dates);
+        dates= datesGenerator.generate(dates);
 
         for (Date date :  dates) {
             hours = allenNetworkService.findById(date);
@@ -69,7 +76,7 @@ public class App {
         List<AllenNeumatic> listHours = new ArrayList<>();
         List<Date> dates =new ArrayList<>();
         Optional<AllenNeumatic> hours = Optional.empty();
-        dates=DatesGenerator.generate(dates);
+        dates=datesGenerator.generate(dates);
 
         for (Date date :  dates) {
             hours = allenNeumaticService.findById(date);
@@ -93,7 +100,7 @@ public class App {
         List<Date> dates =new ArrayList<>();
         Optional<Siemmens> hours = Optional.empty();
 
-        dates=DatesGenerator.generate(dates);
+        dates=datesGenerator.generate(dates);
 
         for (Date date :  dates) {
             hours = siemmensService.findById(date);
@@ -168,7 +175,7 @@ public class App {
     public void updateHoursAllenNetwork(Date date, String hour) {
         Optional<AllenNetwork> tableResponse = allenNetworkService.findById(date);
         AllenNetwork table = tableResponse.get();
-        mapTableHour(table, hour);
+        mapTableHour.setFalse(table, hour);
         allenNetworkService.save(table);
 
     }
@@ -177,7 +184,7 @@ public class App {
     private void updateHoursAllenNeumatic(Date date, String hour) {
         Optional<AllenNeumatic> tableResponse = allenNeumaticService.findById(date);
         AllenNeumatic table = tableResponse.get();
-        mapTableHour(table, hour);
+        mapTableHour.setFalse(table, hour);
         allenNeumaticService.save(table);
 
     }
@@ -185,64 +192,13 @@ public class App {
     private void updateHoursSiemmens(Date date, String hour) {
         Optional<Siemmens> tableResponse = siemmensService.findById(date);
         Siemmens table = tableResponse.get();
-        mapTableHour(table, hour);
+        mapTableHour.setFalse(table, hour);
         siemmensService.save(table);
     }
 
 
-    private void mapTableHour(DatabaseTemplate table, String hour) {
-
-        switch(hour){
-            case "7":
-                table.setSeven_am(false);
-                break;
-            case "8":
-                table.setEight_am(false);
-                break;
-            case "9":
-                table.setNine_am(false);
-                break;
-            case "10":
-                table.setTen_am(false);
-                break;
-            case "11":
-                table.setEleven_am(false);
-                break;
-            case "12":
-                table.setTwelve_am(false);
-                break;
-            case "13":
-                table.setOne_pm(false);
-                break;
-            case "14":
-                table.setTwo_pm(false);
-                break;
-            case "15":
-                table.setThree_pm(false);
-                break;
-            case "16":
-                table.setFour_pm(false);
-                break;
-            case "17":
-                table.setFive_pm(false);
-                break;
-            case "18":
-                table.setEight_pm(false);
-                break;
-            case "19":
-                table.setSeven_pm(false);
-                break;
-            case "20":
-                table.setEight_pm(false);
-                break;
-            case "21":
-                table.setNine_pm(false);
-                break;
-            default:System.out.println("Invalid hour!");
-        }
-
     }
 
 
 
-}
+
