@@ -8,6 +8,7 @@ import laboratoryestudents.app.service.SiemmensService;
 import laboratoryestudents.app.service.StudentRecordService;
 import laboratoryestudents.app.util.DatesGenerator;
 import laboratoryestudents.app.util.MapTableHour;
+import laboratoryestudents.app.util.UpdateHoursTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +41,9 @@ public class App {
 
     @Autowired
     private DatesGenerator datesGenerator;
+
+    @Autowired
+    private UpdateHoursTable updateHoursTable;
 
     @RequestMapping(value = "/")
     public String index() {
@@ -144,57 +148,13 @@ public class App {
             return "register_form";
         } else {
             studentRecordService.saveStudentRecord(studentRecord);
-            updateHoursTable(studentRecord);
+            updateHoursTable.setTable(studentRecord);
 
             return "register_success";
         }
     }
 
-    public void updateHoursTable(StudentRecord obj) {
-        String table = obj.getWorkStation();
-        Date date = obj.getDate_id();
-        String hour = obj.getHour_number();
 
-        if (table.equals("allenNetwork")) {
-            updateHoursAllenNetwork(date, hour);
-            return;
-        }
-
-        if (table.equals("allenNeumatic")) {
-            updateHoursAllenNeumatic(date, hour);
-            return;
-        }
-
-        if (table.equals("siemmens")) {
-            updateHoursSiemmens(date, hour);
-            return;
-        }
-
-    }
-
-    public void updateHoursAllenNetwork(Date date, String hour) {
-        Optional<AllenNetwork> tableResponse = allenNetworkService.findById(date);
-        AllenNetwork table = tableResponse.get();
-        mapTableHour.setFalse(table, hour);
-        allenNetworkService.save(table);
-
-    }
-
-
-    private void updateHoursAllenNeumatic(Date date, String hour) {
-        Optional<AllenNeumatic> tableResponse = allenNeumaticService.findById(date);
-        AllenNeumatic table = tableResponse.get();
-        mapTableHour.setFalse(table, hour);
-        allenNeumaticService.save(table);
-
-    }
-
-    private void updateHoursSiemmens(Date date, String hour) {
-        Optional<Siemmens> tableResponse = siemmensService.findById(date);
-        Siemmens table = tableResponse.get();
-        mapTableHour.setFalse(table, hour);
-        siemmensService.save(table);
-    }
 
 
     }
