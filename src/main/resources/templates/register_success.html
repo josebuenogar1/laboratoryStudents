@@ -2,52 +2,82 @@
 <html xmlns:th="http://www.thymeleaf.org" >
 <head>
     <title>Registration Success</title>
-    <style type="text/css">
-    span {
-        display: inline-block;
-        width: 200px;
-        text-align: left;
-    }
-</style>
 </head>
+<link rel="stylesheet" th:href="@{/css/styles.css}">
 <body>
 <div align="center" th:object="${studentRecord}" >
     <h2>Registration Succeeded!</h2>
 
-
-    <span>Name of the person in charge:</span><span th:text="${studentRecord.name}"></span><br/>
-    <span>E-mail:</span><span th:text="${studentRecord.email}"></span><br/>
-    <span>Id student:</span><span th:text="${studentRecord.idStudent}"></span><br/>
-
-    <span th:if="${not studentRecord.member1.isEmpty()}" >Members</span><br>
-    <div th:if="${not studentRecord.member1.isEmpty()}">
-        <label >Name:</label><span th:text="${studentRecord.member1}"></span><br/>
-    </div>
-    <div th:if="${not studentRecord.member2.isEmpty()}">
-        <label >Name:</label><span  th:text="${studentRecord.member2}"></span><br/>
-    </div>
-    <div th:if="${not studentRecord.member3.isEmpty()}">
-        <label >Name:</label> <span  th:text="${studentRecord.member3}"></span><br/>
-    </div>
-    <div th:if="${not studentRecord.member4.isEmpty()}" >
-        <label >Name:</label> <span  th:text="${studentRecord.member4}"></span><br/>
-    </div>
-   <div th:if="${not studentRecord.member5.isEmpty()}">
-       <label >Name:</label> <span  th:text="${studentRecord.member5}"></span><br/>
-   </div >
-    <div th:if="${not studentRecord.member6.isEmpty()}">
-        <label >Name:</label> <span th:text="${studentRecord.member6}"></span><br/>
-    </div>
-  <div th:if="${not studentRecord.member7.isEmpty()}">
-      <label >Name:</label> <span  th:text="${studentRecord.member7}"></span><br/>
-    <br/>
-</div>
-    <span>Workstation:</span><span th:text="${studentRecord.workStation}"></span><br/>
-    <div th:if="${not studentRecord.material.isEmpty()}">
-        <span>Other material required:</span><span th:text="${studentRecord.material}"></span><br/>
+    <div class="flex-container" >
+        <div>
+            <span>Name of the person in charge:</span>
+        </div>
+        <div class="div-r">
+            <span th:text="${studentRecord.name}"></span>
+        </div>
     </div>
 
-    <span>Register time:</span><span th:text="${studentRecord.creation_time}"></span><br/>
+    <div class="flex-container" >
+        <div>
+            <span>E-mail:</span>
+        </div>
+        <div class="div-r">
+            <span th:text="${studentRecord.email}"></span>
+        </div>
+    </div>
+
+    <div class="flex-container" >
+        <div>
+            <span>Id student:</span>
+        </div>
+        <div class="div-r">
+            <span th:text="${studentRecord.idStudent}"></span>
+        </div>
+    </div>
+
+    <div class="flex-container"  th:if="${not studentRecord.member1.isEmpty()}">
+        <div>
+            <span>Members:</span>
+        </div>
+
+        <div class="div-r">
+            <span th:if="${not studentRecord.member1.isEmpty()}" th:text="${studentRecord.member1}"></span><br>
+            <span th:if="${not studentRecord.member2.isEmpty()}" th:text="${studentRecord.member2}"></span><br>
+            <span th:if="${not studentRecord.member3.isEmpty()}" th:text="${studentRecord.member3}"></span><br>
+            <span th:if="${not studentRecord.member4.isEmpty()}" th:text="${studentRecord.member4}"></span><br>
+            <span th:if="${not studentRecord.member5.isEmpty()}" th:text="${studentRecord.member5}"></span><br>
+            <span th:if="${not studentRecord.member6.isEmpty()}" th:text="${studentRecord.member6}"></span><br>
+            <span th:if="${not studentRecord.member7.isEmpty()}" th:text="${studentRecord.member7}"></span><br>
+        </div>
+    </div>
+
+    <div class="flex-container" >
+        <div>
+            <span>Workstation:</span>
+        </div>
+        <div class="div-r">
+            <span th:text="${studentRecord.workStation}"></span>
+        </div>
+    </div>
+
+    <div class="flex-container" >
+        <div>
+            <span>Other material required:</span>
+        </div>
+        <div class="div-r">
+            <span th:if="${not studentRecord.material.isEmpty()}"  th:text="${studentRecord.material}"></span>
+        </div>
+    </div>
+
+    <div class="flex-container" >
+        <div>
+            <span>Register time:</span>
+        </div>
+        <div class="div-r">
+            <span th:text="${studentRecord.creation_time}"></span>
+        </div>
+    </div>
+
     <span>1) export pdf</span><br/>
     <a th:href="@{'/export/pdf/' + ${studentRecord.studentRecordId}}"  >Export PDF</a><br>
     <span>2) go home</span><br/>
@@ -57,6 +87,7 @@
 <!--this helps to reload the allenNetwork, allenNeumatic, and siemmens.-->
 <script>
      sessionStorage.setItem("Page2Visited", "True");
+     window.onbeforeunload = function() { return "This action can modify this request"; };
 </script>
 
 </body>

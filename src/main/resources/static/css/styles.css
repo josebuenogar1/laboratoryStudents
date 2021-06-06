@@ -1,17 +1,43 @@
 label {
-        display: inline-block;
-        width: 230px;
-        margin: 5px;
-        text-align: left;
-    }
+    display: inline-block;
+    width: 230px;
+    margin: 5px;
+    text-align: left;
+}
 
-    input[type=text], select , span {
-        display: inline-block;
-        width: 200px;
-    }
+input[type=text], select , span {
+    display: inline-block;
+    width: 200px;
+}
 
-    button {
-        padding: 5px;
-        margin: 10px;
-    }
+button {
+    padding: 5px;
+    margin: 10px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container div{
+    padding:2px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.flex-container .div-r{
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+    flex-basis:240px;
+}
+
+span {
+    display: inline-block;
+    text-align: left;
+    width:240px;
+}
+
 
