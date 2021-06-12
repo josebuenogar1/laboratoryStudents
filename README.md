@@ -19,6 +19,8 @@ This is a branch to deploy your app with aws beanstalk.
 6. Add your tables to your database. [tables](https://github.com/josebuenogar1/laboratoryStudents/blob/main/README.md#database)
 7. Add info about your DB conection in your app. <br/>
    [file](https://github.com/josebuenogar1/laboratoryStudents/blob/aws_rds/src/main/resources/application.properties) 
+7.1 Add your information about your login and password  <br>
+   [file](https://github.com/josebuenogar1/laboratoryStudents/blob/aws_rds/src/main/java/laboratoryestudents/app/configuration/SecurityConfig.java) 
 8. Generate the .jar file and upload to aws beanstalk.
 9. Open the link to the project.
 
