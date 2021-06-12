@@ -86,11 +86,16 @@
     <a href="/logout">logout</a><br>
 
 </div>
-<!--this helps to reload the allenNetwork, allenNeumatic, and siemmens.-->
+
 <script>
+//this helps to reload the allenNetwork, allenNeumatic, and siemmens.
      sessionStorage.setItem("Page2Visited", "True");
      window.onbeforeunload = function() { return "This action can modify this request"; };
-</script>
 
+//this is for emerging alerts
+
+        ( ( JavascriptExecutor ) _driver )
+            .executeScript( "window.onbeforeunload = function(e){};" );
+</script>
 </body>
 </html>

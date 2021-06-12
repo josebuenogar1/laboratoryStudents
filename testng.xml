@@ -3,9 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/java-spring-examples/app/app/src/test/java/com/RecordlaboratoryEstudents/app/TestIndex.java">
         <classes>
-
-            <class name="com.RecordlaboratoryEstudents.app.TestAllenNetwork"></class>
-
+            <class name="com.RecordlaboratoryEstudents.app.TestLogin"></class>
         </classes>
     </test>
 </suite>
