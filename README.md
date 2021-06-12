@@ -18,9 +18,9 @@ This is a branch to deploy your app with aws beanstalk.
 5. Connect your RDS instance to pgadmin.[link](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html)
 6. Add your tables to your database. [tables](https://github.com/josebuenogar1/laboratoryStudents/blob/main/README.md#database)
 7. Add info about your DB conection in your app. <br/>
-   [file](https://github.com/josebuenogar1/laboratoryStudents/blob/aws_rds/src/main/resources/application.properties) 
+   [file](https://github.com/josebuenogar1/laboratoryStudents/blob/aws_rds/src/main/resources/application.properties) <br/>
 7.1 Add your information about your login and password  <br>
-   [file](https://github.com/josebuenogar1/laboratoryStudents/blob/aws_rds/src/main/java/laboratoryestudents/app/configuration/SecurityConfig.java) 
+   [file](https://github.com/josebuenogar1/laboratoryStudents/blob/aws_rds/src/main/java/laboratoryestudents/app/configuration/SecurityConfig.java) <br/>
 8. Generate the .jar file and upload to aws beanstalk.
 9. Open the link to the project.
 
