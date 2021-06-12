@@ -45,7 +45,7 @@ public class App {
     @Autowired
     private UpdateHoursTable updateHoursTable;
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/index")
     public String index() {
 
         return "index";
