@@ -1,6 +1,7 @@
 # Api rest app for lab student record
 This is a web app used to register lab students. <br/><br/>
- 
+
+![login](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/login.PNG) <br/><br/>
 ![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/home.PNG) <br/><br/>
 
 ---
@@ -29,8 +30,9 @@ PDF generated. <br/><br/>
 1. Download or clone the code.
 2. Open  pom.xml file as a project (intelilliJ).
 3. [Create DB](#DataBase)
-4. Add info about your DB conection. <br/>
+4. Add info about your DB conection. 
    [file](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/resources/application.properties) <br/>
+4.1  Add your information about your login and password [file](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/java/laboratoryestudents/app/configuration/SecurityConfig.java)<br/>
 5. Run [AppApplication](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/java/laboratoryestudents/app/AppApplication.java).
 6. Open localhost:8080.
 
