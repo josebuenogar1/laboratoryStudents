@@ -42,7 +42,7 @@
 
         hours_ordered.forEach((e,i)=>{
               if ( e[label] ){
-                 row.insertCell(i).innerHTML = `<a href="/register/${window.location.pathname}/${e.date_id}/${hour_number}">${hour_number + ":00"}`;
+                 row.insertCell(i).innerHTML = `<a href="/register/${window.location.pathname.slice(1)}/${e.date_id}/${hour_number}">${hour_number + ":00"}`;
               } else{
                  row.insertCell(i).innerHTML = "Unavailable";
               }
