@@ -38,7 +38,7 @@ public class TestLogin {
 
     @Test(priority = 1)
     public void  allenNetworkLink(){
-        WebElement link= driver.findElement(By.xpath("/html/body/div[1]/a[1]"));
+        WebElement link= driver.findElement(By.xpath("/html/body/div[1]/div[1]/a"));
         link.click();
         this.sleep(3000);
 
@@ -46,7 +46,8 @@ public class TestLogin {
 
     @Test(priority = 2)
     public void  allenNetworkTable(){
-        WebElement table = driver.findElement(By.xpath ("//*[@id='hours_table']/thead/tr[3]/td[1]/a"));
+        //monday at 7 am
+        WebElement table = driver.findElement(By.xpath ("//*[@id=\"hours_table\"]/thead/tr[3]/td[1]/a"));
         table.click();
         this.sleep(3000);
 
@@ -54,20 +55,20 @@ public class TestLogin {
 
     @Test(priority = 3)
     public void allenNetworkRegister(){
-        WebElement  register = driver.findElement(By.xpath("//*[@id='name']"));
+        WebElement  register = driver.findElement(By.xpath("//*[@id=\"name\"]"));
         register.sendKeys("Jose Bueno");
-        register = driver.findElement(By.xpath("//*[@id='idStudent']"));
+        register = driver.findElement(By.xpath("//*[@id=\"idStudent\"]"));
         register.sendKeys("E123456");
-        register = driver.findElement(By.xpath("//*[@id='email']"));
+        register = driver.findElement(By.xpath("//*[@id=\"email\"]"));
         register.sendKeys("jose@university.com");
-        register = driver.findElement(By.xpath("/html/body/div[1]/form/button"));
+        register = driver.findElement(By.xpath("/html/body/div[1]/form/div[16]/input"));
         register.click();
         this.sleep(3000);
     }
 
     @Test(priority = 4)
     public void allenNetworkPDF(){
-        WebElement  pdf = driver.findElement(By.xpath("/html/body/div[1]/a[1]"));
+        WebElement  pdf = driver.findElement(By.xpath("/html/body/div[1]/div[7]/div/a"));
         pdf.click();
         this.sleep(5000);
         final File file = new File("C:/Users/jose/Downloads/users_.pdf");
@@ -85,7 +86,7 @@ public class TestLogin {
     public void allenUnavailable(){
         allenNetworkLink();
         WebElement una = driver.findElement(By.xpath("//*[@id=\"hours_table\"]/thead/tr[3]/td[1]"));
-        Assert.assertEquals(una.getText(),"Unavailable");
+        Assert.assertEquals(una.getText(),"");
     }
 
 
