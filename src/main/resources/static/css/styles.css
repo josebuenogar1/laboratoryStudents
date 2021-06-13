@@ -1,43 +1,175 @@
-label {
-    display: inline-block;
-    width: 230px;
-    margin: 5px;
-    text-align: left;
+* {
+    box-sizing: border-box;
 }
 
-input[type=text], select , span {
+body{
+    background-color: #e0e0e0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    background-color: white;
+    color: grey;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #000;
+}
+
+input[type=submit] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #007bff7a;
+    color: white;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.container-table{
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    font-weight: bold;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+    font-weight: bold;
+}
+
+.link-suc{
+    float: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout  */
+@media screen and (max-width: 1100px) {
+    .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    }
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+select{
     display: inline-block;
     width: 200px;
 }
 
-button {
-    padding: 5px;
-    margin: 10px;
-}
-
-.flex-container{
-    display: flex;
-    justify-content: center;
-}
-
-.flex-container div{
-    padding:2px;
+a:link, a:visited {
+    width: 80%;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    border: 2px solid #007bff;
+    padding: 10px 20px;
     text-align: center;
-    line-height: 20px;
-    font-size: 16px;
-}
-
-.flex-container .div-r{
-    text-align: center;
-    line-height: 20px;
-    font-size: 16px;
-    flex-basis:240px;
-}
-
-span {
+    text-decoration: none;
     display: inline-block;
-    text-align: left;
-    width:240px;
 }
+
+a:hover, a:active {
+    background-color: #007bff;
+    color: white;
+}
+
+.reg-suc{
+    width: 75%;
+    border-radius: 5px;
+    background-color: white;
+    color: grey;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#logout{
+    width: 25%;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    border: 2px solid red;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#logout:hover{
+    background-color: #f63c3c;
+    color: white;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color:#f2f2f2
+}
+
+.styled-table thead tr {
+    color: black;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+
+th {
+    background-color: #007bff;
+    color:white
+}
+
+
+
+
+
+
+
 
 

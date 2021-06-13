@@ -44,7 +44,7 @@
               if ( e[label] ){
                  row.insertCell(i).innerHTML = `<a href="/register/${window.location.pathname.slice(1)}/${e.date_id}/${hour_number}">${hour_number + ":00"}`;
               } else{
-                 row.insertCell(i).innerHTML = "Unavailable";
+                 row.insertCell(i).innerHTML = "";
               }
         })
     }
