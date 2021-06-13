@@ -1,90 +1,111 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Registration Success</title>
 </head>
 <link rel="stylesheet" th:href="@{/css/styles.css}">
 <body>
-<div align="center" th:object="${studentRecord}" >
+<div class="container" th:object="${studentRecord}">
     <h2>Registration Succeeded!</h2>
-
-    <div class="flex-container" >
-        <div>
-            <span>Name of the person in charge:</span>
+    <div class="row">
+        <div class="col-25 ">
+            Name of the person in charge:
         </div>
-        <div class="div-r">
-            <span th:text="${studentRecord.name}"></span>
+        <div class="col-75 reg-suc" th:text="${studentRecord.name}">
         </div>
     </div>
-
-    <div class="flex-container" >
-        <div>
-            <span>E-mail:</span>
+    <div class="row">
+        <div class="col-25">
+            E-mail:
         </div>
-        <div class="div-r">
-            <span th:text="${studentRecord.email}"></span>
+        <div class="col-75 reg-suc" th:text="${studentRecord.email}">
         </div>
     </div>
-
-    <div class="flex-container" >
-        <div>
-            <span>Id student:</span>
+    <div class="row">
+        <div class="col-25">
+            Id student:
         </div>
-        <div class="div-r">
-            <span th:text="${studentRecord.idStudent}"></span>
+        <div class="col-75 reg-suc" th:text="${studentRecord.idStudent}">
         </div>
     </div>
-
-    <div class="flex-container"  th:if="${not studentRecord.member1.isEmpty()}">
-        <div>
-            <span>Members:</span>
+    <div th:if="${not studentRecord.member1.isEmpty()}">
+        <div class="row">
+            <div class="col-25">
+                Members:
+            </div>
         </div>
-
-        <div class="div-r">
-            <span th:if="${not studentRecord.member1.isEmpty()}" th:text="${studentRecord.member1}"></span><br>
-            <span th:if="${not studentRecord.member2.isEmpty()}" th:text="${studentRecord.member2}"></span><br>
-            <span th:if="${not studentRecord.member3.isEmpty()}" th:text="${studentRecord.member3}"></span><br>
-            <span th:if="${not studentRecord.member4.isEmpty()}" th:text="${studentRecord.member4}"></span><br>
-            <span th:if="${not studentRecord.member5.isEmpty()}" th:text="${studentRecord.member5}"></span><br>
-            <span th:if="${not studentRecord.member6.isEmpty()}" th:text="${studentRecord.member6}"></span><br>
-            <span th:if="${not studentRecord.member7.isEmpty()}" th:text="${studentRecord.member7}"></span><br>
+        <div class="row">
+            <div class="col-75 reg-suc link-suc" th:if="${not studentRecord.member1.isEmpty()}"
+                 th:text="${studentRecord.member1}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-75 reg-suc link-suc" th:if="${not studentRecord.member2.isEmpty()}"
+                 th:text="${studentRecord.member2}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-75 reg-suc link-suc" th:if="${not studentRecord.member3.isEmpty()}"
+                 th:text="${studentRecord.member3}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-75 reg-suc link-suc" th:if="${not studentRecord.member4.isEmpty()}"
+                 th:text="${studentRecord.member4}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-75 reg-suc link-suc" th:if="${not studentRecord.member5.isEmpty()}"
+                 th:text="${studentRecord.member5}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-75 reg-suc link-suc" th:if="${not studentRecord.member6.isEmpty()}"
+                 th:text="${studentRecord.member6}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-75 reg-suc link-suc" th:if="${not studentRecord.member7.isEmpty()}"
+                 th:text="${studentRecord.member7}">
+            </div>
         </div>
     </div>
-
-    <div class="flex-container" >
-        <div>
-            <span>Workstation:</span>
+    <div class="row">
+        <div class="col-25">
+            Workstation:
         </div>
-        <div class="div-r">
-            <span th:text="${studentRecord.workStation}"></span>
+        <div class="col-75 reg-suc" th:text="${studentRecord.workStation}">
         </div>
     </div>
-
-    <div class="flex-container" >
-        <div>
-            <span>Other material required:</span>
+    <div class="row">
+        <div class="col-25">
+            Other material required:
         </div>
-        <div class="div-r">
-            <span th:if="${not studentRecord.material.isEmpty()}"  th:text="${studentRecord.material}"></span>
+        <div class="col-75 reg-suc" th:if="${not studentRecord.material.isEmpty()}" th:text="${studentRecord.material}">
         </div>
     </div>
-
-    <div class="flex-container" >
-        <div>
-            <span>Register time:</span>
+    <div class="row">
+        <div class="col-25">
+            Register time:
         </div>
-        <div class="div-r">
-            <span th:text="${studentRecord.creation_time}"></span>
+        <div class="col-75 reg-suc" th:text="${studentRecord.creation_time}">
         </div>
     </div>
-
-    <span>1) export pdf</span><br/>
-    <a th:href="@{'/export/pdf/' + ${studentRecord.studentRecordId}}"  >Export PDF</a><br>
-    <span>2) go home</span><br/>
-    <a href="/">Home</a><br>
-    <span>3) logout</span><br/>
-    <a href="/logout">logout</a><br>
-
+    <div class="row">
+        <div class="col-75 link-suc">
+            <a th:href="@{'/export/pdf/' + ${studentRecord.studentRecordId}}">Export PDF</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-75 link-suc">
+            <a href="/">Home</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-75 link-suc">
+            <a href="/logout" id="logout">log out</a>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -94,8 +115,9 @@
 
 //this is for emerging alerts
 
-        ( ( JavascriptExecutor ) _driver )
-            .executeScript( "window.onbeforeunload = function(e){};" );
+     ( ( JavascriptExecutor ) _driver )
+        .executeScript( "window.onbeforeunload = function(e){};" );
+
 </script>
 </body>
 </html>

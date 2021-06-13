@@ -1,63 +1,154 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Student Record </title>
 </head>
 <link rel="stylesheet" th:href="@{/css/styles.css}">
 <body>
-<div align="center">
+<div class="container">
     <h1>Studente Record</h1>
     <form action="#" th:action="@{/new}" method="post" th:object="${studentRecord}">
-<!--    <label >studentRecordId</label>-->
-        <input type="hidden" th:field="*{studentRecordId}" value="${studentRecordId}}" readonly />
+        <!--    <label >studentRecordId</label>-->
+        <input type="hidden" th:field="*{studentRecordId}" value="${studentRecordId}}" readonly/>
         <span th:if="${#fields.hasErrors('studentRecordId')}" th:errors="*{studentRecordId}"></span>
         <br/>
-
-        <label >Date:</label>
-        <input type="text" th:field="*{date_id}" value="${date_id}}" readonly />
-        <span th:if="${#fields.hasErrors('date_id')}" th:errors="*{date_id}"></span>
+        <div class="row">
+            <div class="col-25">
+                <label>Date:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{date_id}" value="${date_id}}" readonly/>
+                <span th:if="${#fields.hasErrors('date_id')}" th:errors="*{date_id}"></span>
+                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Hour:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{hour_number}" value="${hour_number}" readonly/>
+                <span th:if="${#fields.hasErrors('hour_number')}" th:errors="*{hour_number}"></span>
+                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Workstation:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{workStation}" value="${workStation}}" readonly/>
+                <span th:if="${#fields.hasErrors('workStation')}" th:errors="*{workStation}"></span>
+                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Name of the person in charge:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{name}"/><br/>
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Id student:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{idStudent}"/><br/>
+                <span th:if="${#fields.hasErrors('idStudent')}" th:errors="*{idStudent}"></span>
+                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>E-mail:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{email}"/><br/>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                <br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Members:</label><br/>
+            </div>
+            <div class="col-75">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Name:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{member1}"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Name:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{member2}"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Name:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{member3}"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Name:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{member4}"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Name:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{member5}"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Name:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{member6}"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Name:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{member7}"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Other material required:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{material}"/>
+                <span th:if="${#fields.hasErrors('material')}" th:errors="*{material}"></span>
+                <br/>
+            </div>
+        </div>
         <br/>
-
-        <label >Hour:</label>
-        <input type="text" th:field="*{hour_number}" value="${hour_number}" readonly />
-        <span th:if="${#fields.hasErrors('hour_number')}" th:errors="*{hour_number}"></span>
-        <br/>
-
-        <label >Workstation:</label>
-        <input type="text" th:field="*{workStation}" value="${workStation}}" readonly />
-        <span th:if="${#fields.hasErrors('workStation')}" th:errors="*{workStation}"></span>
-        <br/>
-
-        <label>Name of the person in charge:</label>
-        <input type="text" th:field="*{name}" /><br/>
-        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
-        <br/>
-
-        <label>Id student:</label>
-        <input type="text" th:field="*{idStudent}" /><br/>
-        <span th:if="${#fields.hasErrors('idStudent')}" th:errors="*{idStudent}"></span>
-        <br/>
-
-        <label>E-mail:</label>
-        <input type="text" th:field="*{email}" /><br/>
-        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-        <br/>
-
-        <label >Members:</label><br/>
-        <label >Name:</label><input type="text" th:field="*{member1}" /><br/>
-        <label >Name:</label><input type="text" th:field="*{member2}" /><br/>
-        <label >Name:</label><input type="text" th:field="*{member3}" /><br/>
-        <label >Name:</label><input type="text" th:field="*{member4}" /><br/>
-        <label >Name:</label><input type="text" th:field="*{member5}" /><br/>
-        <label >Name:</label><input type="text" th:field="*{member6}" /><br/>
-        <label >Name:</label><input type="text" th:field="*{member7}" /><br/>
-
-        <label>Other material required:</label>
-        <input type="text" th:field="*{material}" />
-        <span th:if="${#fields.hasErrors('material')}" th:errors="*{material}"></span>
-        <br/>
-
-        <button type="submit">Send</button>
+        <div class="row">
+            <input type="submit" value="Send">
+        </div>
     </form>
 </div>
 </body>

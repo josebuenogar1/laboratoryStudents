@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Laboratory</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<div align="center">
-    <h1 >Welcome to laboratory register</h1>
+<div class="container">
+    <h1>Welcome to laboratory register</h1>
     <h2>Choose work station</h2>
-    <a href="/allenNetwork">Allen Network</a><br>
-    <a href="/allenNeumatic">Allen Neumatic</a><br>
-    <a href="/siemmens">Siemens</a><br>
-    <a href="/logout">logout</a><br>
+    <div class="row">
+        <a href="/allenNetwork">Allen Network</a><br>
+    </div>
+    <br/>
+    <div class="row">
+        <a href="/allenNeumatic">Allen Neumatic</a><br>
+    </div>
+    <br/>
+    <div class="row">
+        <a href="/siemmens">Siemens</a><br>
+    </div>
+    <br/>
+    <div class="row">
+        <a id="logout" href="/logout">log out</a><br>
+    </div>
 </div>
 </body>
 <!--this is for emerging alerts-->
 <script>
         ( ( JavascriptExecutor ) _driver )
             .executeScript( "window.onbeforeunload = function(e){};" );
-</script>
 
+
+
+</script>
 </html>

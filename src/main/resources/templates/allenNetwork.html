@@ -3,10 +3,12 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>allen Network</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<div align="center">
-    <table id="hours_table" border="1" cellpadding="10">
+<div class="container-table">
+    <h2>Work station Allen Network</h2>
+    <table id="hours_table" class="styled-table">
         <thead>
         <tr>
             <th>monday</th>
@@ -33,6 +35,5 @@
 </script>
 <!--path relative to static folder-->
 <script type="text/javascript" th:src="@{/js/main.js}"></script>
-
 </body>
 </html>
