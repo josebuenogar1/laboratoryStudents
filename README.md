@@ -3,8 +3,6 @@ This is a web app used to register lab students. <br/><br/>
 
 
 <img src="https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/animation.gif" width="500" height="500"/> <br/><br/>
-![login](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/login.PNG) <br/><br/>
-![home](https://github.com/josebuenogar1/laboratoryStudents/blob/main/images/home.PNG) <br/><br/>
 
 ---
 It shows availability. <br/>
