@@ -124,9 +124,16 @@ public class App {
     public String showForm(Model model, @PathVariable String workStation, @PathVariable Date date_id, @PathVariable String hour_number) {
         StudentRecord studentRecord = new StudentRecord();
         studentRecord.setStudentRecordId(workStation, date_id, hour_number);
-        model.addAttribute("studentRecord", studentRecord);
-        return "register_form";
+        try {
+            String studentRecordId = studentRecord.getStudentRecordId();
+            StudentRecord studentRecordQuery = studentRecordService.get(studentRecordId);
+        } catch (Exception e ){
+            model.addAttribute("studentRecord", studentRecord);
+            return "register_form";
+        }
+        return "index";
     }
+
 
     @RequestMapping(path ="/export/pdf/{studentRecordId}" , method = RequestMethod.GET)
     public void exportToPDF(HttpServletResponse response, @PathVariable String studentRecordId) throws DocumentException, IOException {
