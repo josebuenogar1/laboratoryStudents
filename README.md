@@ -36,7 +36,8 @@ PDF generated. <br/><br/>
 5. Run [AppApplication](https://github.com/josebuenogar1/laboratoryStudents/blob/main/src/main/java/laboratoryestudents/app/AppApplication.java).
 6. Open localhost:8080.
 
-Note: if you can deploy in aws go to aws_rds branch. 
+Note: if you can deploy in aws go to aws_rds branch. </br>
+Note 2: if you can deploy in kubernetes go to kubernetes branch.
 
 ## Running the tests
 
