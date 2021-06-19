@@ -27,7 +27,7 @@ This is a branch to deploy your app with kubernetes.
    4.3 Inside psql run ```create database laboratory;``` </br>
    4.4 Follow this section to insert tables and values [link](https://github.com/josebuenogar1/laboratoryStudents/blob/main/README.md#create-tables) </br> 
    
-5. Edit application.properties with your user, password, and url with your service(lab-postgres-service) and database. 
+5. Edit [application.properties](https://github.com/josebuenogar1/laboratoryStudents/blob/kubernetes/src/main/resources/application.properties) with your user, password, and url with your service(lab-postgres-service) and database. 
    
 6. Generate .jar package with maven.
    
@@ -40,5 +40,5 @@ This is a branch to deploy your app with kubernetes.
    8.2 Edit nodePort to external service. </br>
    8.3 Run ```kubectl apply -f lab-deployment.yml``` </br>
    
-9. Start service with: minikube service lab-service 
+9. Start service with ```minikube service lab-service``` 
 
