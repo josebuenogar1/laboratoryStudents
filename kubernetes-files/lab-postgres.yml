@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-postgres-deployment
+  labels:
+    app: lab-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lab-postgres
+  template:
+    metadata:
+      labels:
+        app: lab-postgres
+    spec:
+      containers:
+        - name: lab-postgres
+          image: postgres
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: lab-secret
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: lab-secret
+                  key: password
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: lab-configmap
+                  key: database
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab-postgres-service
+spec:
+  selector:
+    app: lab-postgres
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
