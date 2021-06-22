@@ -17,6 +17,9 @@ spec:
       containers:
         - name: lab-postgres
           image: postgres
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: lab-data
           ports:
             - containerPort: 5432
           env:
@@ -35,6 +38,10 @@ spec:
                 configMapKeyRef:
                   name: lab-configmap
                   key: database
+      volumes:
+        - name: lab-data
+          hostPath:
+            path: /pgdata
 ---
 apiVersion: v1
 kind: Service

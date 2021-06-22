@@ -17,14 +17,15 @@ This is a branch to deploy your app with kubernetes.
 3. Configuring the database postgres: </br>
    3.1 Edit [lab-secret.yml](https://github.com/josebuenogar1/laboratoryStudents/blob/kubernetes/kubernetes-files/lab-secret.yml) with your user and password in base64. </br>
    3.2 Edit [lab-configmap.yml](https://github.com/josebuenogar1/laboratoryStudents/blob/kubernetes/kubernetes-files/lab-configmap.yml) with your database name. </br>
-   3.3 Run ```kubectl apply -f lab-secret.yml``` </br>
-   3.3 Run ```kubectl apply -f lab-configmap.yml```  </br>
-   3.3 Run ```kubectl apply -f lab-postgres.yml``` </br>
+   3.3 Edit [lab-postgres.yml](https://github.com/josebuenogar1/laboratoryStudents/blob/kubernetes/kubernetes-files/lab-postgres.yml) with your directory to volumes>hostPath>path. </br>
+   3.4 Run ```kubectl apply -f lab-secret.yml``` </br>
+   3.5 Run ```kubectl apply -f lab-configmap.yml```  </br>
+   3.6 Run ```kubectl apply -f lab-postgres.yml``` </br>
    
 4. Create database on your pod: </br>
    4.1 Run ```kubectl exec -it <pod> --/bin/bash/``` </br>
    4.2 Inside container run ```psql -U postgres``` </br>
-   4.3 Inside psql run ```create database laboratory;``` </br>
+   4.3 Inside psql run ```\connect laboratory;``` </br>
    4.4 Follow this section to insert tables and values [link](https://github.com/josebuenogar1/laboratoryStudents/blob/main/README.md#create-tables) </br> 
    
 5. Edit [application.properties](https://github.com/josebuenogar1/laboratoryStudents/blob/kubernetes/src/main/resources/application.properties) with your user, password, and url with your service(lab-postgres-service) and database. 
